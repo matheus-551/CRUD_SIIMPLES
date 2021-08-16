@@ -14,6 +14,7 @@
 				<th>Nome</th>
 				<th>Email</th>
 				<th>Curso</th>
+				<th>Opção</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -21,6 +22,9 @@
 				<td th:text="${List.Nome}"></td>
 				<td th:text="${List.Email}"></td>
 				<td th:text="${List.Curso}"></td>
+				<td><a href="#">Editar</a> || 
+				<a href="#">Deletar</a>
+				</td>
 			</tr>	
 		</tbody>	
 	</table>

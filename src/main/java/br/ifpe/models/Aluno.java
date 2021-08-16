@@ -1,13 +1,29 @@
 package br.ifpe.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Aluno {
 	
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer Id;
 	private String Nome;
 	private String Email;
 	private String Curso;
 	
 	public Aluno() {
 		
+	}
+	
+	public Integer getId() {
+		return Id;
+	}
+	
+	public void setId(Integer Id) {
+		this.Id = Id;
 	}
 	
 	public String getNome() {
@@ -36,7 +52,6 @@ public class Aluno {
 
 	@Override
 	public String toString() {
-		return "Aluno [Nome=" + Nome + ", Email=" + Email + ", Curso=" + Curso + "]";
+		return "Aluno [Id=" + Id + ", Nome=" + Nome + ", Email=" + Email + ", Curso=" + Curso + "]";
 	}
-
 }
