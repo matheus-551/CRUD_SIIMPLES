@@ -7,16 +7,16 @@
 <body>
 	<h1>Cadastro de Alunos</h1>
 	
-	<form>
+	<form action="/EnviaForm" method="post">
 		<label for="Nome">Nome: </label>
 		<input type="text" name="Nome" id="Nome"><br>
 		<label for="Email">Email: </label>
 		<input type="Email" name="Email" id="Email"> <br>
 		<label for="Curso">Curso: </label>
-		<select>
-			<option>Tecnologo Análise e desenvolvimento de sistemas</option>
-			<option>Tecnico Informática para internet</option>
-			<option>Tecnico em Qualidade</option>
+		<select name="Curso">
+			<option value="Análise e desenvolvimento de sistemas">Tecnologo Análise e desenvolvimento de sistemas</option>
+			<option value="Informática para internet">Tecnico Informática para internet</option>
+			<option value="Qualidade">Tecnico em Qualidade</option>
 		</select>
 		
 		<button type="Submit">Enviar</button>

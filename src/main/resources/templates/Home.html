@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br" xmlns:th="www.thymeleaf.org">
 <head>
 <meta charset="utf-8">
 <title>Listagem de alunos</title>
@@ -9,11 +9,20 @@
 	<a href="/CadastroAluno">Novo</a>
 	
 	<table>
-		<tr>
-			<th>Nome</th>
-			<th>Email</th>
-			<th>Curso</th>
-		</tr>	
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Email</th>
+				<th>Curso</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="List : ${ListaAluno}">
+				<td th:text="${List.Nome}"></td>
+				<td th:text="${List.Email}"></td>
+				<td th:text="${List.Curso}"></td>
+			</tr>	
+		</tbody>	
 	</table>
 </body>
 </html>
