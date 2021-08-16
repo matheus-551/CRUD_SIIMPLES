@@ -22,8 +22,8 @@
 				<td th:text="${List.Nome}"></td>
 				<td th:text="${List.Email}"></td>
 				<td th:text="${List.Curso}"></td>
-				<td><a href="#">Editar</a> || 
-				<a href="#">Deletar</a>
+				<td><a th:href="|/CadastroAluno?id=${List.id}|">Editar</a> || 
+					<a th:href="|/excluirAluno?id=${List.id}|">Excluir</a>
 				</td>
 			</tr>	
 		</tbody>	

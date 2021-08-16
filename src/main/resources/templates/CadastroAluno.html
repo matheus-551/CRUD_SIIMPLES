@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="www.thymeleaf.org">
 <head>
 	<meta charset="utf-8">
 	<title>Cadastro de alunos</title>
@@ -7,16 +7,17 @@
 <body>
 	<h1>Cadastro de Alunos</h1>
 	
-	<form action="/EnviaForm" method="post">
+	<form action="/EnviaForm" method="post" th:object="${aluno}">
+		<input type="hidden" th:field="*{id}">
 		<label for="Nome">Nome: </label>
-		<input type="text" name="Nome" id="Nome"><br>
+		<input type="text" th:field="*{Nome}"><br>
 		<label for="Email">Email: </label>
-		<input type="Email" name="Email" id="Email"> <br>
+		<input type="email" th:field="*{Email}"> <br>
 		<label for="Curso">Curso: </label>
-		<select name="Curso">
-			<option value="Análise e desenvolvimento de sistemas">Tecnologo Análise e desenvolvimento de sistemas</option>
-			<option value="Informática para internet">Tecnico Informática para internet</option>
-			<option value="Qualidade">Tecnico em Qualidade</option>
+		<select th:field="*{Curso}">
+			<option th:field="*{Curso}" value="Análise e desenvolvimento de sistemas">Tecnologo Análise e desenvolvimento de sistemas</option>
+			<option th:field="*{Curso}" value="Informática para internet">Tecnico Informática para internet</option>
+			<option th:field="*{Curso}" value="Qualidade">Tecnico em Qualidade</option>
 		</select>
 		
 		<button type="Submit">Enviar</button>
