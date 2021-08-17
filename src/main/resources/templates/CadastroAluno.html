@@ -2,25 +2,47 @@
 <html lang="pt-br" xmlns:th="www.thymeleaf.org">
 <head>
 	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>Cadastro de alunos</title>
 </head>
 <body>
-	<h1>Cadastro de Alunos</h1>
-	
-	<form action="/EnviaForm" method="post" th:object="${aluno}">
-		<input type="hidden" th:field="*{id}">
-		<label for="Nome">Nome: </label>
-		<input type="text" th:field="*{Nome}"><br>
-		<label for="Email">Email: </label>
-		<input type="email" th:field="*{Email}"> <br>
-		<label for="Curso">Curso: </label>
-		<select th:field="*{Curso}">
-			<option th:field="*{Curso}" value="Análise e desenvolvimento de sistemas">Tecnologo Análise e desenvolvimento de sistemas</option>
-			<option th:field="*{Curso}" value="Informática para internet">Tecnico Informática para internet</option>
-			<option th:field="*{Curso}" value="Qualidade">Tecnico em Qualidade</option>
-		</select>
+	<div class="container">
+		<h1>Cadastro de Alunos</h1>
 		
-		<button type="Submit">Enviar</button>
-	</form>
+		<a href="/" style="position:relative; left:-150px; top:-85px;" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">arrow_back</i></a>
+		
+		<form action="/EnviaForm" method="post" th:object="${aluno}">
+			<input type="hidden" th:field="*{id}">
+			<label for="Nome">Nome: </label>
+			<input type="text" th:field="*{Nome}"><br>
+			<label for="Email">Email: </label>
+			<input type="email" th:field="*{Email}"> <br>		
+			<p>
+		      <label>
+		        <input type="radio" th:field="*{Curso}" value="Análise e desenvolvimento de sistemas">
+		        <span>Análise e desenvolvimento de sistemas</span>
+		      </label>
+		    </p>
+		    <p>
+		      <label>
+		         <input type="radio" th:field="*{Curso}" value="Informática para internet">
+		        <span>Informática para internet</span>
+		      </label>
+		    </p>
+		    <p>
+		      <label>
+		         <input type="radio" th:field="*{Curso}" value="Qualidade"> 
+		        <span>Qualidade</span>
+		      </label>
+		    </p>
+	
+			<button style="margin-right:10pt;" class="waves-effect waves-light btn" type="Submit">Enviar</button>
+			<button class="waves-effect waves-light btn" type="reset">Cancelar</button>
+		</form>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
 </body>
 </html>

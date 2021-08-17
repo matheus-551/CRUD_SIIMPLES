@@ -1,32 +1,41 @@
 <!DOCTYPE html>
 <html lang="pt-br" xmlns:th="www.thymeleaf.org">
 <head>
-<meta charset="utf-8">
-<title>Listagem de alunos</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Listagem de alunos</title>
 </head>
 <body>
-	<h1>Alunos</h1>
-	<a href="/CadastroAluno">Novo</a>
-	
-	<table>
-		<thead>
-			<tr>
-				<th>Nome</th>
-				<th>Email</th>
-				<th>Curso</th>
-				<th>Opção</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="List : ${ListaAluno}">
-				<td th:text="${List.Nome}"></td>
-				<td th:text="${List.Email}"></td>
-				<td th:text="${List.Curso}"></td>
-				<td><a th:href="|/CadastroAluno?id=${List.id}|">Editar</a> || 
-					<a th:href="|/excluirAluno?id=${List.id}|">Excluir</a>
-				</td>
-			</tr>	
-		</tbody>	
-	</table>
+	<div class="container">
+		<h1>Alunos</h1>
+		<a href="/CadastroAluno" style="position:relative; float:right; left: -55px; top:-70px" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+		
+		<table>
+			<thead>
+				<tr>
+					<th>Nome</th>
+					<th>Email</th>
+					<th>Curso</th>
+					<th>Opção</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="List : ${ListaAluno}">
+					<td th:text="${List.Nome}"></td>
+					<td th:text="${List.Email}"></td>
+					<td th:text="${List.Curso}"></td>
+					<td>
+					<a style="margin-right: 10pt;" th:href="|/CadastroAluno?id=${List.id}|" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">edit</i></a>
+					
+					<a th:href="|/excluirAluno?id=${List.id}|" class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">delete</i></a>
+					</td>
+				</tr>	
+			</tbody>	
+		</table>
+	</div>
+	 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
 </html>
