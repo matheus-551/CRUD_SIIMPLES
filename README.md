@@ -1,6 +1,2 @@
 # CRUD_SIIMPLES
-CRUD simples 
--Java
--Jpa
--Mysql
--thymeleaf
+utilizando a linguagem de programação java.
