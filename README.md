@@ -7,7 +7,7 @@ Framework
 Framework ORM
 - Hibernate
 
-Mapeamento objeto relacional 
+Mapeamento objeto relacional (MOR)
 - JPA
 
 Template Engine 
