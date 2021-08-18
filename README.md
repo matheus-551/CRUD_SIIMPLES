@@ -1,5 +1,5 @@
 # CRUD_SIIMPLES
-linguagem de programação: java.
+-linguagem de programação: java.
 -Framework: Spring 
 -Framework ORM: Hibernate 
 -Mapeamento objeto relacional: JPA 
