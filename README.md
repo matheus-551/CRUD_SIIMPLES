@@ -1,6 +1,5 @@
 # CRUD_SIIMPLES
 utilizando a linguagem de programação java.
-
 Framework 
 - Spring 
 Framework ORM
